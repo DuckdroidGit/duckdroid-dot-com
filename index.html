@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duckdroid</title>
+    <meta name="keywords" content="Duckdroid, duck, Android, Cute, Bugdroid, Droid, robot, bot, tech, cool, technology, device, handphone, phone, tablet, electronic, computer, device">
+    <meta name="description" content="Welcome to the Duckdroid's website! Click on cards or tabs to navigate something.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script type="module">
+        import 'https://cdn.jsdelivr.net/npm/@material/web/all.js';
+        import { bundleSource } from 'https://cdn.jsdelivr.net/npm/@material/web/bundle.js';
+    </script>
+
+    <style>
+        :root {
+            /* M3 Color Tokens (Manually defined or generated via Material Theme Builder) */
+            --md-sys-color-primary: #6750A4;
+            --md-sys-color-on-primary: #ffffff;
+            --md-sys-color-surface: #fef7ff;
+            --md-sys-color-outline: #79747e;
+            font-family: 'Google Sans', sans-serif;
+            background-color: var(--md-sys-color-surface);
+        }
+
+        body {
+            margin: 0;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .card {
+            background: #fff;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--md-sys-color-outline);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <md-elevated-button>
+            <md-icon slot="icon">menu</md-icon>
+            Menu
+        </md-elevated-button>
+        <h2>Material 3 Web</h2>
+        <md-filled-icon-button>
+            <md-icon>settings</md-icon>
+        </md-filled-icon-button>
+    </header>
+
+    <div class="card">
+        <h3>Input Example</h3>
+        <md-outlined-text-field 
+            label="What's your name?" 
+            placeholder="Type here..."
+            supporting-text="Required field"
+            style="width: 100%; margin-bottom: 16px;">
+        </md-outlined-text-field>
+
+        <md-filled-button id="submit-btn">
+            Submit
+        </md-filled-button>
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+        <label><md-checkbox></md-checkbox> Accept Terms</label>
+        <md-switch selected></md-switch> Notifications
+    </div>
+
+    <script>
+        // Interactive Logic
+        const btn = document.querySelector('#submit-btn');
+        btn.addEventListener('click', () => {
+            alert('Material 3 Button Clicked!');
+        });
+    </script>
+
+</body>
+</html>
