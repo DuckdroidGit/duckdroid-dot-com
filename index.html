@@ -4,113 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duckdroid</title>
-    <meta name="keywords" content="Duckdroid, duck, Android, Cute, Bugdroid, Droid, robot, bot, tech, cool, technology, device, handphone, phone, tablet, electronic, computer, device">
-    <meta name="description" content="Welcome to the Duckdroid's website! Click on cards, buttons, or tabs to navigate something.">
     
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
     
-    <script type="module">
-        import 'https://cdn.jsdelivr.net/npm/@material/web/all.js';
-        import { bundleSource } from 'https://cdn.jsdelivr.net/npm/@material/web/bundle.js';
-    </script>
-
+    <script type="module" src="https://esm.run/@material/web/all.js"></script>
+    
     <style>
         :root {
-            /* M3 Color Tokens (Manually defined or generated via Material Theme Builder) */
+            /* M3 Baseline Color Scheme (Light Mode) */
             --md-sys-color-primary: #6750A4;
             --md-sys-color-on-primary: #ffffff;
-            --md-sys-color-surface: #fef7ff;
-            --md-sys-color-outline: #79747e;
-            font-family: 'Google Sans', sans-serif;
-            background-color: var(--md-sys-color-surface);
-        }
-
-        */ fallback /*
-        @font-face {
-            font-family: 'Material Symbols Outlined';
-            font-style: normal;
-            font-weight: 400;
-            src url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v311/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOej.woff2) format('woff2');
-        }
-
-        .material-symbols-outlined {
-            font-family: 'Material Symbols Outlined';
-            font-weight: normal;
-            font-style: normal;
-            font-size: 24px;
-            line-height: 1;
-            letter-spacing: normal;
-            text-transform: none;
-            display: inline-block;
-            white-space: nowrap;
-            word-wrap: normal;
-            direction: ltr;
-            -webkit-font-feature-settings: 'liga';
-            -webkit-font-smoothing: antialiased;
+            --md-sys-color-primary-container: #EADDFF;
+            --md-sys-color-surface: #FEF7FF;
+            --md-sys-color-on-surface: #1D1B20;
+            --md-sys-color-outline: #79747E;
+            --md-sys-typescale-body-large-font: 'Roboto', sans-serif;
         }
 
         body {
             margin: 0;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
         }
 
-        .card {
-            background: #fff;
-            padding: 16px;
-            border-radius: 12px;
-            border: 1px solid var(--md-sys-color-outline);
-            max-width: 400px;
-            width: 100%;
-        }
-
+        /* Top App Bar Styling */
         header {
-            width: 100%;
+            height: 64px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
+            padding: 0 16px;
+            background-color: var(--md-sys-color-surface);
+            border-bottom: 1px solid var(--md-sys-color-outline);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
+
+        .container {
+            padding: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* M3 Card Aesthetic */
+        .card {
+            background-color: var(--md-sys-color-primary-container);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+        }
+
+        h1 { font-weight: 400; margin: 0 16px; font-size: 22px; }
+        p { line-height: 1.5; color: #49454F; }
     </style>
 </head>
 <body>
 
     <header>
-        <md-elevated-button>
-            <md-icon slot="icon">menu</md-icon>
-            Menu
-        </md-elevated-button>
-        <h2>Duckdroid</h2>
-        <md-filled-icon-button>
-            <md-icon>settings</md-icon>
-        </md-filled-icon-button>
+        <md-icon-button>
+            <span class="material-symbols-outlined">menu</span>
+        </md-icon-button>
+        <h1>My M3 Workspace</h1>
     </header>
 
-    <div class="card">
-        <h3>The Nostalgic Side of Android</h3>
-        <p>Welcome to the Duckdroid's website! Click on cards, buttons, or tabs to navigate something.</p>
+    <main class="container">
+        <section>
+            <div class="card">
+                <h2>Welcome to Material 3</h2>
+                <p>This page uses Material Web Components. Notice the rounded corners and specific color contrast ratios defined by the M3 spec.</p>
+                <md-filled-button id="main-action">Get Started</md-filled-button>
+            </div>
 
-        <md-filled-tonal-button>About</md-filled-tonal-button>
-        <md-filled-tonal-button>Help</md-filled-tonal-button>
-        <md-filled-tonal-button>Contact</md-filled-tonal-button>
-    </div>
+            <div class="card" style="background: white; border: 1px solid var(--md-sys-color-outline);">
+                <h3>Interactive Components</h3>
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <md-checkbox checked></md-checkbox>
+                    <label>Enable Features</label>
+                    <md-outlined-text-field label="Your Name" variant="outlined"></md-outlined-text-field>
+                </div>
+            </div>
+        </main>
 
-    <div style="display: flex; gap: 10px;">
-        <label><md-checkbox></md-checkbox> Accept Terms</label>
-        <md-switch selected></md-switch> Notifications
-    </div>
+    <md-fab class="fab" variant="primary" aria-label="Add">
+        <md-icon slot="icon">
+            <span class="material-symbols-outlined">add</span>
+        </md-icon>
+    </md-fab>
 
     <script>
-        // Interactive Logic
-        const btn = document.querySelector('#submit-btn');
+        // Simple interaction script
+        const btn = document.getElementById('main-action');
         btn.addEventListener('click', () => {
-            alert('Material 3 Button Clicked!');
+            alert('Material 3 Button Clicked! Note the ripple effect.');
         });
     </script>
-
+</body>
+</html>
 </body>
 </html>
