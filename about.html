@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Duckdroid</title>
+    <meta name="keywords" content="Duckdroid, duck, Android, Cute, Bugdroid, Droid, robot, bot, tech, cool, technology, device, handphone, phone, tablet, electronic, computer, device">
+    <meta name="description" content="Duckdroid is a tech to Android since November 21, 2025.">
+    <meta name="site_name" content="Duckdroid">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    
+    <script type="module" src="https://esm.run/@material/web/all.js"></script>
+    
+    <style>
+        :root {
+            /* M3 Baseline Color Scheme (Light Mode) */
+            --md-sys-color-primary: #6750A4;
+            --md-sys-color-on-primary: #ffffff;
+            --md-sys-color-primary-container: #EADDFF;
+            --md-sys-color-surface: #FEF7FF;
+            --md-sys-color-on-surface: #1D1B20;
+            --md-sys-color-outline: #79747E;
+            --md-sys-typescale-body-large-font: 'Google Sans', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Google Sans', sans-serif;
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+        }
+
+        /* Top App Bar Styling */
+        header {
+            height: 64px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            background-color: var(--md-sys-color-surface);
+            border-bottom: 1px solid var(--md-sys-color-outline);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .container {
+            padding: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* M3 Card Aesthetic */
+        .card {
+            background-color: var(--md-sys-color-primary-container);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        .fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+        }
+
+        h1 { font-weight: 400; margin: 0 16px; font-size: 22px; }
+        p { line-height: 1.5; color: #49454F; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <md-icon-button>
+            <span class="material-symbols-outlined">menu</span>
+        </md-icon-button>
+        <h1>Duckdroid</h1>
+    </header>
+
+    <main class="container">
+        <section>
+            <div class="card">
+                <img href="img/fake.jpeg">
+                <h2>About Duckdroid</h2>
+            </div>
+
+            <div class="card" style="background: white; border: 1px solid var(--md-sys-color-outline);">
+                <h3>Interactive Components</h3>
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <md-checkbox checked></md-checkbox>
+                    <label>Enable Features</label>
+                    <md-outlined-text-field label="Your Name" variant="outlined"></md-outlined-text-field>
+                </div>
+            </div>
+        </main>
+
+    <md-fab class="fab" variant="primary" aria-label="Add">
+        <md-icon slot="icon">
+            <span class="material-symbols-outlined">add</span>
+        </md-icon>
+    </md-fab>
+
+    <script>
+        // Simple interaction script
+        const btn = document.getElementById('main-action');
+        btn.addEventListener('click', () => {
+            alert('Material 3 Button Clicked! Note the ripple effect.');
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>
