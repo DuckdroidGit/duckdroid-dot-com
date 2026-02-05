@@ -9,6 +9,14 @@
     --md-sys-typescale-body-large-font: 'Google Sans', sans-serif;
 }
 
+a {
+ color: var(--md-sys-color-primary);
+ text-decoration: none;
+}
+a:hover {
+ text-decoration: underline;
+}
+
 body {
             margin: 0;
             font-family: 'Google Sans', sans-serif;
