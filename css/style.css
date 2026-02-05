@@ -7,7 +7,11 @@
     --md-sys-color-on-surface: #191C19;
     --md-sys-color-outline: #757A6D;
     --md-sys-typescale-body-large-font: 'Google Sans', sans-serif;
+    --md-ref-typeface-brand: 'Google Sans';
+    --md-ref-typeface-plain: sans-serif;
 }
+
+import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
 
 a {
  color: var(--md-sys-color-primary);
