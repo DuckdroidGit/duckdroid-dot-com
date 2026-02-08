@@ -19,23 +19,21 @@
     
     <script type="module" src="https://esm.run/@material/web/all.js"></script>
     <script>
-        import '@material/web/dialog/dialog.js';
-        import {MdDialog} from '@material/web/dialog/dialog.js';
-        import {MaterialStoryInit} from './material-collection.js';
-        import {css, html, nothing} from 'lit';
+        import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
+        import {MatExpansionModule} from '@angular/material/expansion';
 
-        /** Knob types for dialog stories. */
-        export interface StoryKnobs {
-        quick: boolean;
-        noFocusTrap: boolean;
-        icon: string;
-        headline: string;
-        supportingText: string;
-        }
-
-       function showDialog(event: Event) {
-       ((event.target as Element).nextElementSibling as MdDialog)?.show();
-       }
+        /**
+         * @title Basic expansion panel
+         */
+         @Component({
+          selector: 'expansion-overview-example',
+          templateUrl: 'expansion-overview-example.html',
+          imports: [MatExpansionModule],
+          changeDetection: ChangeDetectionStrategy.OnPush,
+         })
+         export class ExpansionOverviewExample {
+           readonly panelOpenState = signal(false);
+         }
     </script>
     <link rel="stylesheet" href="css/style.css">
     
@@ -62,20 +60,22 @@
 
             <div class="card" style="background: white; border: 1px solid var(--md-sys-color-outline);">
                 <h2>Website</h2>
-                <md-filled-button @click=${showDialog} aria-label="Open a dialog">
+                    <mat-accordion>
+                        <mat-expansion-panel hideToggle>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title> Where to find the archived website? </mat-panel-title>
+                                <mat-panel-description> Wayback Machine! You can navigate or explore old and new websites. </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <p>This is the primary content of the panel.</p>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel hideToggle>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title> Can I miss the downloading contents and files? </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>Answers job! You can type web address with an end of <code>.com</code>, type a directory of <code>/image</code>, <code>/media</code>, <code>/fonts</code>, and <code>/css</code>.</p>
+                        </mat-expansion-panel>
+                    </mat-accordion>
                 Where to find the archived website?
-                </md-filled-button>
-                <md-dialog>
-                <div slot="headline">
-                duckdroid.com/help says:
-                </div>
-                <form slot="content" id="form-id" method="dialog">
-                <a href="https://web.archive.org">Wayback Machine</a>! You can explore the old and new websites on your Wayback Machine from Internet Archive.
-                </form>
-                <div slot="actions">
-                <md-text-button form="form-id">OK</md-text-button>
-                </div>
-                </md-dialog>
                 <h3>Where to visit website repository?</h3>
                 <p>Yes! You can view repository of website in GitHub. For viewing or managing the repository, see <a href="https://github.com/DuckdroidGit/duckdroid-dot-com/">Duckdroid's Website Repository.</p>
                 <h2>Applications</h2>
