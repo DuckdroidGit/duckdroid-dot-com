@@ -21,9 +21,52 @@
     <script type="module" src="https://esm.run/@material/web/all.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .cpalette-grid {
-            display="grid;
-        }
+/* Container Setup */
+.palette-container {
+  display: grid;
+  /* Creates as many columns as fit, at least 200px wide each */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual Card Styling */
+.color-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.color-card:hover {
+  transform: translateY(-5px);
+}
+
+/* The Color Box */
+.color-swatch {
+  height: 150px;
+  width: 100%;
+}
+
+/* Text Info Area */
+.color-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hex-code {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.color-name {
+  font-size: 0.9rem;
+  color: #666;
+}
     </style>
     
 </head>
@@ -50,21 +93,39 @@
 
             <div class="card" style="background: white; border: 1px solid var(--md-sys-color-outline);">
                 <h2>Material Design 1</h2>
-                <div class="cpalette-grid">
-                    <div>
-                    <svg width="1000" height="1200">
-                        <rect width="200" height="150"
-                         style="fill: #F44336;" />
-                        <text fill="#FFFFFF" x="60" y="60">Red | 500 | #F44336</text>
-                        <rect width="200" height="90"
-                         style="fill: #FFEBEE;" />
-                        <text fill="#FFFFFF" x="60" y="60">Red | 50 | #F44336;</text>
-                    </svg>
-                    </div>
-                    <div>
-                        
-                    </div>
-            </div>
+<div class="palette-container">
+  <div class="color-card">
+    <div class="color-swatch" style="background-color: #264653;"></div>
+    <div class="color-info">
+      <span class="hex-code">#264653</span>
+      <span class="color-name">Charcoal</span>
+    </div>
+  </div>
+
+  <div class="color-card">
+    <div class="color-swatch" style="background-color: #2A9D8F;"></div>
+    <div class="color-info">
+      <span class="hex-code">#2A9D8F</span>
+      <span class="color-name">Persian Green</span>
+    </div>
+  </div>
+
+  <div class="color-card">
+    <div class="color-swatch" style="background-color: #E9C46A;"></div>
+    <div class="color-info">
+      <span class="hex-code">#E9C46A</span>
+      <span class="color-name">Saffron</span>
+    </div>
+  </div>
+
+  <div class="color-card">
+    <div class="color-swatch" style="background-color: #F4A261;"></div>
+    <div class="color-info">
+      <span class="hex-code">#F4A261</span>
+      <span class="color-name">Sandy Brown</span>
+    </div>
+  </div>
+</div>
             <div class="card" style="background: white; border: 1px solid var(--md-sys-color-outline);">
                 <h2>Colors</h2>
                 <md-filled-button id="main-action" href="apps.html">View</md-filled-button>
