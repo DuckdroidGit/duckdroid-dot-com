@@ -21,6 +21,10 @@ a:hover {
  text-decoration: underline;
 }
 
+html {
+ font-family: 'Google Sans', sans-serif;
+}
+
 body {
             margin: 0;
             font-family: 'Google Sans', sans-serif;
