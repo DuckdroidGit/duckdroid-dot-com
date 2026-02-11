@@ -9,6 +9,8 @@
     --md-sys-typescale-body-large-font: 'Google Sans', sans-serif;
     --md-ref-typeface-brand: 'Google Sans';
     --md-ref-typeface-plain: sans-serif;
+    /* Text Links */
+    --webkit-any-link: #396A1E;
 }
 
 import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
@@ -16,17 +18,18 @@ import {styles as typescaleStyles} from '@material/web/typography/md-typescale-s
        a {
         color: var(--md-sys-color-on-primary);
         text-decoration: none;
+        cursor: pointer;
        }
 
        a:hover {
         text-decoration: underline;
        }
 
-html {
- font-family: 'Google Sans', sans-serif;
-}
+       html {
+       font-family: 'Google Sans', sans-serif;
+       }
 
-body {
+        body {
             margin: 0;
             background-color: var(--md-sys-color-surface);
             color: var(--md-sys-color-on-surface);
