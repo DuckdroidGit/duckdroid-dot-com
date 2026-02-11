@@ -15,15 +15,9 @@
 
 import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
 
-       a {
-        color: var(--md-sys-color-on-primary);
-        text-decoration: none;
-        cursor: pointer;
-       }
+       a {color: var(--md-sys-color-on-primary);text-decoration: none;}
 
-       a:hover {
-        text-decoration: underline;
-       }
+       a:hover {text-decoration: underline;}
 
        html {
        font-family: 'Google Sans', sans-serif;
